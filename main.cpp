@@ -14,6 +14,15 @@ public:
         head = NULL;
     }
     
+    ~LinkedList() {
+        Node* temp = head;
+        while (temp != NULL) {
+            Node* next = temp->next;
+            delete temp;
+            temp = next;
+        }
+    }
+    
     void insert(int value) {
         Node* newNode = new Node();
         newNode->data = value;
